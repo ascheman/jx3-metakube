@@ -1,0 +1,22 @@
+apiVersion: jenkins.io/v1
+kind: SourceRepository
+metadata:
+  creationTimestamp: null
+  labels:
+    owner: ascheman
+    provider: github
+    repository: jx3-golang-20210224
+    gitops.jenkins-x.io/pipeline: 'namespaces'
+  name: ascheman-jx3-golang-20210224
+  namespace: jx
+spec:
+  httpCloneURL: https://github.com/ascheman/jx3-golang-20210224.git
+  org: ascheman
+  provider: https://github.com
+  providerKind: github
+  providerName: github
+  repo: jx3-golang-20210224
+  scheduler:
+    kind: ""
+    name: in-repo
+  url: https://github.com/ascheman/jx3-golang-20210224
