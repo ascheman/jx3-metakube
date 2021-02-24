@@ -17,16 +17,21 @@ spec:
     registry: ghcr.io
   environments:
   - key: dev
+    owner: ascheman
+    repository: jx3-metakube
   - key: staging
   - key: production
   ingress:
-    domain: ""
+    domain: 195.192.132.207.nip.io
     externalDNS: false
+    kind: ingress
     namespaceSubDomain: -jx.
     tls:
       email: ""
       enabled: false
       production: false
+  pipelineUser:
+    username: ascheman
   repository: bucketrepo
   secretStorage: local
   vault: {}
