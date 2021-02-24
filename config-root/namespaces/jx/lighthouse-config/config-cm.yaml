@@ -41,7 +41,7 @@ data:
         - needs-rebase
         repos:
         - ascheman/jx3-metakube
-      target_url: http://dashboard-jx.
+      target_url: http://dashboard-jx.195.192.132.207.nip.io
 kind: ConfigMap
 metadata:
   creationTimestamp: null
