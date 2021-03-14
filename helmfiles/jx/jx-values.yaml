@@ -37,7 +37,7 @@ jxRequirements:
   - key: staging
   - key: production
   ingress:
-    domain: 195.192.132.207.nip.io
+    domain: 195.192.132.233.nip.io
     externalDNS: false
     kind: ingress
     namespaceSubDomain: -jx.

@@ -45,7 +45,7 @@ data:
         repos:
         - ascheman/jx3-metakube
         - ascheman/jx3-golang-20210224
-      target_url: http://dashboard-jx.195.192.132.207.nip.io
+      target_url: http://dashboard-jx.195.192.132.233.nip.io
 kind: ConfigMap
 metadata:
   creationTimestamp: null
