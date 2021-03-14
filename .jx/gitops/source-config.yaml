@@ -8,6 +8,7 @@ spec:
     provider: https://github.com
     providerKind: github
     repositories:
+    - name: jx3-demo-20210314
     - name: jx3-golang-20210224
     scheduler: in-repo
   slack:
