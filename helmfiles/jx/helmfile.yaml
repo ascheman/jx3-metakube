@@ -9,12 +9,14 @@ repositories:
   url: https://storage.googleapis.com/chartmuseum.jenkins-x.io
 - name: jx3
   url: https://storage.googleapis.com/jenkinsxio/charts
+- name: jxgh
+  url: https://jenkins-x-charts.github.io/repo
 releases:
-- chart: jenkins-x/jxboot-helmfile-resources
-  version: 1.0.30
+- chart: jx3/jxboot-helmfile-resources
+  version: 1.0.40
   name: jxboot-helmfile-resources
   values:
-  - ../../versionStream/charts/jenkins-x/jxboot-helmfile-resources/values.yaml.gotmpl
+  - ../../versionStream/charts/jx3/jxboot-helmfile-resources/values.yaml.gotmpl
   - jx-values.yaml
 - chart: jx3/jenkins-x-crds
   version: 3.0.5
@@ -28,13 +30,13 @@ releases:
   values:
   - ../../versionStream/charts/jx3/jx-pipelines-visualizer/values.yaml.gotmpl
   - jx-values.yaml
-- chart: jx3/jx-preview
-  version: 0.0.153
+- chart: jxgh/jx-preview
+  version: 0.0.168
   name: jx-preview
   values:
   - jx-values.yaml
 - chart: jenkins-x/lighthouse
-  version: 0.0.938
+  version: 0.0.939
   name: lighthouse
   values:
   - ../../versionStream/charts/jenkins-x/lighthouse/values.yaml.gotmpl
@@ -46,7 +48,7 @@ releases:
   - ../../versionStream/charts/jenkins-x/bucketrepo/values.yaml.gotmpl
   - jx-values.yaml
 - chart: jx3/jx-build-controller
-  version: 0.0.32
+  version: 0.0.33
   name: jx-build-controller
   values:
   - ../../versionStream/charts/jx3/jx-build-controller/values.yaml.gotmpl
