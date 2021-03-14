@@ -4,13 +4,12 @@ kind: Deployment
 metadata:
   name: lighthouse-tekton-controller
   labels:
-    chart: "lighthouse-0.0.938"
+    chart: "lighthouse-0.0.939"
     app: lighthouse-tekton-controller
     gitops.jenkins-x.io/pipeline: 'namespaces'
   namespace: jx
   annotations:
     wave.pusher.com/update-on-config-change: 'true'
-    jenkins-x.io/hash: '28b55c93bce03555f953aeb3da0be2c841f2e27fa4790218c69134eb22a1d1b7'
 spec:
   replicas: 1
   selector:
@@ -20,12 +19,12 @@ spec:
     metadata:
       labels:
         app: lighthouse-tekton-controller
-      annotations: {}
+      annotations: {jenkins-x.io/hash: 'f64645bd1383ef5cb0bbcf66656640bd24c29c5c6c8307a03e9fe4aa08de7b3a'}
     spec:
       serviceAccountName: lighthouse-tekton-controller
       containers:
         - name: lighthouse-tekton-controller
-          image: gcr.io/jenkinsxio/lighthouse-tekton-controller:0.0.938
+          image: gcr.io/jenkinsxio/lighthouse-tekton-controller:0.0.0-PR-1254-5-SNAPSHOT
           imagePullPolicy: IfNotPresent
           args:
             - --namespace=jx
@@ -48,7 +47,7 @@ spec:
             - name: LIGHTHOUSE_DASHBOARD_TEMPLATE
               value: "namespaces/{{ .Namespace }}/pipelineruns/{{ .PipelineRun }}"
             - name: LIGHTHOUSE_VERSIONSTREAM_JENKINS_X_JX3_PIPELINE_CATALOG
-              value: "5acd04a60acef2e7174c80823eb0533d54e38be9"
+              value: "244ede420849fa6a35cb7f04c510f516bf4c316a"
           resources:
             limits:
               cpu: 100m

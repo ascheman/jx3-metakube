@@ -1,15 +1,11 @@
-# Source: jxboot-helmfile-resources/charts/gcactivities/templates/cronjob.yaml
+# Source: jxboot-helmfile-resources/templates/jx-gcpods-cronjob.yaml
 apiVersion: batch/v1beta1
 kind: CronJob
 metadata:
-  name: jxboot-helmfile-resources-gcactivities
-  labels:
-    app: gcactivities
-    chart: gcactivities-2.0.1143
-    release: jxboot-helmfile-resources
-    heritage: Helm
-    gitops.jenkins-x.io/pipeline: 'namespaces'
+  name: jx-gcpods
   namespace: jx
+  labels:
+    gitops.jenkins-x.io/pipeline: 'namespaces'
 spec:
   concurrencyPolicy: Forbid
   failedJobsHistoryLimit: 1
@@ -20,20 +16,20 @@ spec:
       template:
         metadata:
           labels:
-            app: gcactivities
+            app: gcpods
             release: jxboot-helmfile-resources
         spec:
           restartPolicy: Never
-          serviceAccountName: jxboot-helmfile-resources-gcactivities
+          serviceAccountName: jx-gcpods
           containers:
-            - name: gcactivities
+            - name: gcpods
               command: [jx]
               args:
+                - gitops
                 - gc
-                - activities
-                - --batch-mode
+                - pods
               imagePullPolicy: IfNotPresent
-              image: "gcr.io/jenkinsxio-labs/jxl:0.0.127"
+              image: "ghcr.io/jenkins-x/jx-boot:3.1.304"
               env:
                 - name: JX_LOG_FORMAT
                   value: json
